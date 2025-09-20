@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -15,12 +16,17 @@ import {
   Plus,
   BarChart3,
   Clock,
-  Target
+  Target,
+  Brain,
+  Settings
 } from "lucide-react";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from "recharts";
 import { classroomStats } from "@/data/mockData";
+import ClassQuizManager from "@/components/ClassQuizManager";
 
 const TeacherDashboard = () => {
+  const [activeTab, setActiveTab] = useState<'overview' | 'quiz-manager'>('overview');
+  
   const classStats = {
     totalStudents: classroomStats.length,
     averageProgress: Math.round(classroomStats.reduce((acc, student) => acc + student.progress, 0) / classroomStats.length),
@@ -84,7 +90,32 @@ const TeacherDashboard = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Stats Overview */}
+        {/* Tab Navigation */}
+        <div className="mb-8">
+          <div className="flex space-x-1 bg-muted/30 p-1 rounded-lg w-fit">
+            <Button
+              variant={activeTab === 'overview' ? 'default' : 'ghost'}
+              onClick={() => setActiveTab('overview')}
+              className="flex items-center space-x-2"
+            >
+              <BarChart3 className="h-4 w-4" />
+              <span>Overview</span>
+            </Button>
+            <Button
+              variant={activeTab === 'quiz-manager' ? 'default' : 'ghost'}
+              onClick={() => setActiveTab('quiz-manager')}
+              className="flex items-center space-x-2"
+            >
+              <Brain className="h-4 w-4" />
+              <span>Quiz Manager</span>
+            </Button>
+          </div>
+        </div>
+
+        {/* Tab Content */}
+        {activeTab === 'overview' ? (
+          <>
+            {/* Stats Overview */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -432,6 +463,13 @@ const TeacherDashboard = () => {
             </Card>
           </div>
         </div>
+          </>
+        ) : (
+          <ClassQuizManager 
+            classId="class_10a" 
+            teacherId="teacher_123" 
+          />
+        )}
       </div>
     </div>
   );

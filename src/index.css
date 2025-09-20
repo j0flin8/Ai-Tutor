@@ -6,63 +6,63 @@
 
 @layer base {
   :root {
-    /* Base colors */
-    --background: 248 250 252;
-    --foreground: 221 39% 11%;
+    /* Base colors - Maximum White */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 9%;
 
-    /* Card system */
+    /* Card system - Pure White */
     --card: 0 0% 100%;
-    --card-foreground: 221 39% 11%;
+    --card-foreground: 0 0% 9%;
 
-    /* Popover system */
+    /* Popover system - Pure White */
     --popover: 0 0% 100%;
-    --popover-foreground: 221 39% 11%;
+    --popover-foreground: 0 0% 9%;
 
-    /* Primary - Deep Educational Blue */
-    --primary: 217 91% 60%;
-    --primary-foreground: 0 0% 98%;
-    --primary-hover: 217 91% 55%;
+    /* Primary - Subtle Blue Accent */
+    --primary: 214 100% 50%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 214 100% 45%;
 
-    /* Secondary - Vibrant Learning Green */
-    --secondary: 142 76% 36%;
-    --secondary-foreground: 0 0% 98%;
-    --secondary-hover: 142 76% 31%;
+    /* Secondary - Very Light Blue */
+    --secondary: 214 100% 95%;
+    --secondary-foreground: 214 100% 20%;
+    --secondary-hover: 214 100% 90%;
 
-    /* Accent - Warm Educational Purple */
-    --accent: 262 83% 58%;
-    --accent-foreground: 0 0% 98%;
-    --accent-hover: 262 83% 53%;
+    /* Accent - Light Blue */
+    --accent: 214 100% 90%;
+    --accent-foreground: 214 100% 20%;
+    --accent-hover: 214 100% 85%;
 
-    /* Success - Achievement Green */
-    --success: 120 70% 50%;
-    --success-foreground: 0 0% 98%;
+    /* Success - Light Blue Success */
+    --success: 214 100% 40%;
+    --success-foreground: 0 0% 100%;
 
-    /* Warning - Attention Orange */
-    --warning: 38 92% 50%;
-    --warning-foreground: 0 0% 98%;
+    /* Warning - Light Blue Warning */
+    --warning: 214 100% 35%;
+    --warning-foreground: 0 0% 100%;
 
-    /* Muted tones */
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted tones - Very Light Gray */
+    --muted: 0 0% 98%;
+    --muted-foreground: 0 0% 45%;
 
-    /* Destructive */
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Destructive - Light Red */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    /* Borders and inputs */
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 217 91% 60%;
+    /* Borders and inputs - Very Light Gray */
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 214 100% 50%;
 
-    /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(217 91% 60%), hsl(262 83% 58%));
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(210 40% 98%));
-    --gradient-accent: linear-gradient(135deg, hsl(142 76% 36%), hsl(120 70% 50%));
+    /* Gradients - Minimal Blue on White */
+    --gradient-hero: linear-gradient(135deg, hsl(214 100% 50%), hsl(214 100% 40%));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(0 0% 98%));
+    --gradient-accent: linear-gradient(135deg, hsl(214 100% 95%), hsl(214 100% 90%));
 
-    /* Shadows */
-    --shadow-soft: 0 4px 6px -1px hsl(217 91% 60% / 0.1), 0 2px 4px -1px hsl(217 91% 60% / 0.06);
-    --shadow-medium: 0 10px 15px -3px hsl(217 91% 60% / 0.1), 0 4px 6px -2px hsl(217 91% 60% / 0.05);
-    --shadow-large: 0 25px 50px -12px hsl(217 91% 60% / 0.25);
+    /* Shadows - Very Subtle */
+    --shadow-soft: 0 1px 3px -1px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.06);
+    --shadow-medium: 0 4px 6px -1px hsl(0 0% 0% / 0.1), 0 2px 4px -1px hsl(0 0% 0% / 0.06);
+    --shadow-large: 0 10px 15px -3px hsl(0 0% 0% / 0.1), 0 4px 6px -2px hsl(0 0% 0% / 0.05);
 
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -70,84 +70,84 @@
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 98%;
+    --sidebar-background: 0 0% 100%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-foreground: 0 0% 9%;
 
-    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary: 214 100% 50%;
 
-    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-primary-foreground: 0 0% 100%;
 
-    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent: 0 0% 98%;
 
-    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-accent-foreground: 0 0% 9%;
 
-    --sidebar-border: 220 13% 91%;
+    --sidebar-border: 0 0% 90%;
 
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-ring: 214 100% 50%;
   }
 
   .dark {
-    /* Base colors - Dark mode */
-    --background: 221 39% 11%;
-    --foreground: 210 40% 98%;
+    /* Base colors - Dark mode - Still minimal */
+    --background: 0 0% 5%;
+    --foreground: 0 0% 95%;
 
-    /* Card system - Dark */
-    --card: 224 71% 4%;
-    --card-foreground: 210 40% 98%;
+    /* Card system - Dark but minimal */
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 95%;
 
-    /* Popover system - Dark */
-    --popover: 224 71% 4%;
-    --popover-foreground: 210 40% 98%;
+    /* Popover system - Dark but minimal */
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 95%;
 
-    /* Primary - Brighter in dark */
-    --primary: 217 91% 65%;
-    --primary-foreground: 221 39% 11%;
-    --primary-hover: 217 91% 70%;
+    /* Primary - Subtle blue in dark */
+    --primary: 214 100% 60%;
+    --primary-foreground: 0 0% 5%;
+    --primary-hover: 214 100% 65%;
 
-    /* Secondary - Brighter green */
-    --secondary: 142 76% 41%;
-    --secondary-foreground: 221 39% 11%;
-    --secondary-hover: 142 76% 46%;
+    /* Secondary - Light blue in dark */
+    --secondary: 214 100% 15%;
+    --secondary-foreground: 214 100% 80%;
+    --secondary-hover: 214 100% 20%;
 
-    /* Accent - Brighter purple */
-    --accent: 262 83% 63%;
-    --accent-foreground: 221 39% 11%;
-    --accent-hover: 262 83% 68%;
+    /* Accent - Light blue in dark */
+    --accent: 214 100% 20%;
+    --accent-foreground: 214 100% 80%;
+    --accent-hover: 214 100% 25%;
 
-    /* Success */
-    --success: 120 70% 55%;
-    --success-foreground: 221 39% 11%;
+    /* Success - Blue success in dark */
+    --success: 214 100% 50%;
+    --success-foreground: 0 0% 5%;
 
-    /* Warning */
-    --warning: 38 92% 55%;
-    --warning-foreground: 221 39% 11%;
+    /* Warning - Blue warning in dark */
+    --warning: 214 100% 45%;
+    --warning-foreground: 0 0% 5%;
 
-    /* Muted tones - Dark */
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    /* Muted tones - Dark but minimal */
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 60%;
 
     /* Destructive - Dark */
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 95%;
 
-    /* Borders and inputs - Dark */
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 217 91% 65%;
+    /* Borders and inputs - Dark but minimal */
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 214 100% 60%;
 
-    /* Gradients - Dark mode */
-    --gradient-hero: linear-gradient(135deg, hsl(217 91% 65%), hsl(262 83% 63%));
-    --gradient-card: linear-gradient(145deg, hsl(224 71% 4%), hsl(217.2 32.6% 17.5%));
-    --gradient-accent: linear-gradient(135deg, hsl(142 76% 41%), hsl(120 70% 55%));
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Gradients - Dark mode minimal */
+    --gradient-hero: linear-gradient(135deg, hsl(214 100% 60%), hsl(214 100% 50%));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 8%), hsl(0 0% 12%));
+    --gradient-accent: linear-gradient(135deg, hsl(214 100% 15%), hsl(214 100% 20%));
+    --sidebar-background: 0 0% 8%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 214 100% 60%;
+    --sidebar-primary-foreground: 0 0% 5%;
+    --sidebar-accent: 0 0% 12%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 0 0% 15%;
+    --sidebar-ring: 214 100% 60%;
   }
 }
 
@@ -179,26 +179,26 @@
 }
 
 @layer components {
-  /* Hero button variant */
+  /* Hero button variant - Minimal blue on white */
   .btn-hero {
-    @apply bg-gradient-to-r from-primary to-accent text-white font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105;
+    @apply bg-primary text-primary-foreground font-semibold px-8 py-4 rounded-xl shadow-soft hover:shadow-medium transition-all duration-300 hover:scale-105;
   }
 
-  /* Card variants */
+  /* Card variants - Pure white with subtle shadows */
   .card-elevated {
-    @apply bg-card border border-border rounded-xl shadow-soft hover:shadow-medium transition-all duration-300;
+    @apply bg-white border border-border rounded-xl shadow-soft hover:shadow-medium transition-all duration-300;
   }
 
   .card-feature {
-    @apply bg-gradient-to-br from-card to-muted/30 border border-border rounded-xl p-6 hover:shadow-medium transition-all duration-300 hover:-translate-y-1;
+    @apply bg-white border border-border rounded-xl p-6 hover:shadow-medium transition-all duration-300 hover:-translate-y-1;
   }
 
-  /* Glass effect */
+  /* Glass effect - Minimal */
   .glass {
-    @apply bg-white/10 backdrop-blur-md border border-white/20;
+    @apply bg-white/95 backdrop-blur-md border border-border;
   }
 
-  /* Progress indicators */
+  /* Progress indicators - Minimal blue */
   .progress-ring {
     @apply w-4 h-4 rounded-full border-2 border-primary/20;
   }
@@ -211,17 +211,17 @@
     @apply border-success bg-success;
   }
 
-  /* Interactive elements */
+  /* Interactive elements - Subtle */
   .interactive-hover {
-    @apply transition-all duration-300 hover:scale-105 hover:shadow-medium cursor-pointer;
+    @apply transition-all duration-300 hover:scale-105 hover:shadow-soft cursor-pointer;
   }
 
-  /* Text gradients */
+  /* Text gradients - Minimal blue */
   .text-gradient {
-    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent;
   }
 
   .text-gradient-success {
-    @apply bg-gradient-to-r from-secondary to-success bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent;
   }
 }

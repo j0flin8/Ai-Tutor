@@ -15,12 +15,74 @@ import {
   Award,
   BookOpen,
   MessageSquare,
-  BarChart3
+  BarChart3,
+  Play,
+  Clock,
+  GraduationCap,
+  Pencil,
+  HelpCircle,
+  UserCheck,
+  ChevronLeft,
+  ChevronRight,
+  Phone,
+  ShoppingCart
 } from "lucide-react";
-import heroImage from "@/assets/hero-education.jpg";
 import { testimonials, pricingPlans } from "@/data/mockData";
 
 const LandingPage = () => {
+  const popularCourses = [
+    {
+      title: "2-Year JEE",
+      icon: Clock,
+      color: "bg-purple-500",
+      description: "Complete JEE preparation"
+    },
+    {
+      title: "2-Year NEET",
+      icon: Play,
+      color: "bg-yellow-500",
+      description: "Medical entrance coaching"
+    },
+    {
+      title: "Offline Centres",
+      icon: GraduationCap,
+      color: "bg-green-500",
+      description: "Physical learning centers"
+    },
+    {
+      title: "Olympiad",
+      icon: Pencil,
+      color: "bg-pink-500",
+      description: "Competitive exam prep"
+    },
+    {
+      title: "Early Learning",
+      icon: HelpCircle,
+      color: "bg-orange-400",
+      description: "LKG - Class 5 courses"
+    },
+    {
+      title: "One to One Classes",
+      icon: UserCheck,
+      color: "bg-blue-400",
+      description: "Personalized tutoring"
+    }
+  ];
+
+  const exploreCourses = [
+    {
+      title: "Class 3 - 13 Competitive Exams",
+      description: "JEE, NEET, Olympiad preparation"
+    },
+    {
+      title: "Class 3 - 12 School Tuition",
+      description: "CBSE, ICSE, State boards"
+    },
+    {
+      title: "Class 1 - 5 Courses for kids",
+      description: "Foundation building programs"
+    }
+  ];
   const features = [
     {
       icon: Brain,
@@ -54,91 +116,99 @@ const LandingPage = () => {
     }
   ];
 
-  const stats = [
-    { number: "50,000+", label: "Happy Students" },
-    { number: "95%", label: "Improvement Rate" },
-    { number: "24/7", label: "AI Tutor Access" },
-    { number: "1/10th", label: "Cost vs Coaching" }
-  ];
-
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
+      {/* Navigation Bar */}
+      <nav className="bg-white border-b border-border sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
+            <div className="flex items-center">
+              <div className="text-2xl font-bold text-primary">AI Tutor</div>
+            </div>
+            
+            <div className="hidden md:flex items-center space-x-8">
+              <Link to="/quiz" className="text-foreground hover:text-primary">Courses</Link>
+              <Link to="/ai-tutor" className="text-foreground hover:text-primary">AI Tutor</Link>
+              <Link to="/student-dashboard" className="text-foreground hover:text-primary">Dashboard</Link>
+              <Link to="/teacher-dashboard" className="text-foreground hover:text-primary">For Teachers</Link>
+              <Link to="/pricing" className="text-foreground hover:text-primary">Pricing</Link>
+            </div>
+            
+            <div className="flex items-center space-x-4">
+              <div className="hidden sm:flex items-center text-sm text-muted-foreground">
+                <Phone className="h-4 w-4 mr-2 text-primary" />
+                <span>Talk to our experts 1800-120-456-456</span>
+              </div>
+              <Button variant="outline" size="sm">Sign in</Button>
+            </div>
+          </div>
+        </div>
+      </nav>
+
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-accent/5 to-secondary/10" />
-        <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
-        
-        <div className="container mx-auto px-4 relative z-10">
+      <section className="relative bg-white py-20 border-b border-border">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-center lg:text-left"
+              className="text-foreground"
             >
-              <Badge className="mb-4 text-sm font-medium bg-primary/10 text-primary border-primary/20">
-                Powered by Gemini 2.0 + Knowledge Graph
+              <Badge className="mb-4 bg-accent text-primary border-0">
+                For Class 1 - Grade 12
               </Badge>
               
               <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-                <span className="text-gradient">Personalized AI Tutor</span>
-                <br />
-                at <span className="text-gradient-success">1/10th the cost</span>
-                <br />
-                of coaching
+                Explore our <span className="text-primary">AI-powered courses</span>
               </h1>
               
-              <p className="text-xl text-muted-foreground mb-8 max-w-2xl">
-                Transform learning with adaptive AI tutoring that understands each student's unique needs. 
-                Get instant explanations, personalized quizzes, and progress tracking in multiple languages.
+              <p className="text-xl mb-6 text-muted-foreground">
+                • LIVE Online Classes
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <Link to="/student-onboarding">
-                  <Button variant="hero" size="xl" className="w-full sm:w-auto">
-                    <Zap className="mr-2 h-5 w-5" />
-                    Start Free
-                  </Button>
-                </Link>
-                <Link to="/teacher-dashboard">
-                  <Button variant="outline" size="xl" className="w-full sm:w-auto">
-                    <Users className="mr-2 h-5 w-5" />
-                    For Schools
-                  </Button>
-                </Link>
-              </div>
-              
-              <div className="mt-8 flex flex-wrap gap-6 justify-center lg:justify-start">
-                {stats.map((stat, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.1 + 0.8 }}
-                    className="text-center"
-                  >
-                    <div className="text-2xl font-bold text-gradient">{stat.number}</div>
-                    <div className="text-sm text-muted-foreground">{stat.label}</div>
-                  </motion.div>
-                ))}
-              </div>
+              <Link to="/student-onboarding">
+                <Button size="xl" variant="hero" className="px-8 py-4 text-lg">
+                  Enrol Now
+                </Button>
+              </Link>
             </motion.div>
             
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative"
+              className="grid grid-cols-2 gap-4"
             >
-              <div className="relative rounded-2xl overflow-hidden shadow-large">
-                <img 
-                  src={heroImage} 
-                  alt="AI Classroom Learning Experience" 
-                  className="w-full h-auto animate-float"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />
-              </div>
+              <Card className="bg-white border border-border">
+                <CardContent className="p-6 text-center">
+                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <BookOpen className="h-8 w-8 text-primary" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-foreground mb-2">MATHEMATICS</h3>
+                  <p className="text-muted-foreground">Interactive Learning</p>
+                </CardContent>
+              </Card>
+              
+              <Card className="bg-white border border-border">
+                <CardContent className="p-6 text-center">
+                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <MessageSquare className="h-8 w-8 text-primary" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-foreground mb-2">SCIENCE</h3>
+                  <p className="text-muted-foreground">Hands-on Experiments</p>
+                </CardContent>
+              </Card>
             </motion.div>
+          </div>
+          
+          {/* Carousel Indicators */}
+          <div className="flex justify-center mt-8 space-x-2">
+            <div className="w-8 h-2 bg-black rounded-full"></div>
+            <div className="w-8 h-2 bg-white/50 rounded-full"></div>
+            <div className="w-8 h-2 bg-white/50 rounded-full"></div>
+            <div className="w-8 h-2 bg-white/50 rounded-full"></div>
+            <div className="w-8 h-2 bg-white/50 rounded-full"></div>
           </div>
         </div>
       </section>
@@ -441,6 +511,7 @@ const LandingPage = () => {
           </motion.div>
         </div>
       </section>
+
     </div>
   );
 };

@@ -107,10 +107,12 @@ const StudentDashboard = () => {
                   Start Quiz
                 </Button>
               </Link>
-              <Button variant="outline">
-                <Brain className="mr-2 h-4 w-4" />
-                AI Tutor
-              </Button>
+              <Link to="/ai-tutor">
+                <Button variant="outline">
+                  <Brain className="mr-2 h-4 w-4" />
+                  AI Tutor
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
