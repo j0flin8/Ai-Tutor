@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -25,11 +26,16 @@ import {
   ChevronLeft,
   ChevronRight,
   Phone,
-  ShoppingCart
+  ShoppingCart,
+  Camera,
+  Gamepad2
 } from "lucide-react";
 import { testimonials, pricingPlans } from "@/data/mockData";
+import SubjectDemo from "@/components/SubjectDemo";
 
 const LandingPage = () => {
+  const [showDemo, setShowDemo] = useState<'Mathematics' | 'Science' | null>(null);
+
   const popularCourses = [
     {
       title: "2-Year JEE",
@@ -113,6 +119,16 @@ const LandingPage = () => {
       icon: BarChart3,
       title: "Knowledge Graph",
       description: "Navigate through interconnected learning topics"
+    },
+    {
+      icon: Camera,
+      title: "AR Learning",
+      description: "Immersive 3D experiences with augmented reality"
+    },
+    {
+      icon: Gamepad2,
+      title: "Gamified Learning",
+      description: "Learn through games, challenges, and achievements"
     }
   ];
 
@@ -127,6 +143,8 @@ const LandingPage = () => {
             </div>
             
             <div className="hidden md:flex items-center space-x-8">
+              <Link to="/subjects" className="text-foreground hover:text-primary">Subjects</Link>
+              <Link to="/ar-gaming" className="text-foreground hover:text-primary">AR & Gaming</Link>
               <Link to="/quiz" className="text-foreground hover:text-primary">Courses</Link>
               <Link to="/ai-tutor" className="text-foreground hover:text-primary">AI Tutor</Link>
               <Link to="/student-dashboard" className="text-foreground hover:text-primary">Dashboard</Link>
@@ -180,27 +198,61 @@ const LandingPage = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="grid grid-cols-2 gap-4"
             >
-              <Card className="bg-white border border-border">
+              <Card 
+                className="bg-white border border-border hover:shadow-lg transition-all duration-300 cursor-pointer hover:scale-105"
+                onClick={() => setShowDemo('Mathematics')}
+              >
                 <CardContent className="p-6 text-center">
                   <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                     <BookOpen className="h-8 w-8 text-primary" />
                   </div>
                   <h3 className="text-2xl font-bold text-foreground mb-2">MATHEMATICS</h3>
                   <p className="text-muted-foreground">Interactive Learning</p>
+                  <div className="mt-4">
+                    <Badge variant="outline" className="text-xs">
+                      Start Assessment
+                    </Badge>
+                  </div>
                 </CardContent>
               </Card>
               
-              <Card className="bg-white border border-border">
+              <Card 
+                className="bg-white border border-border hover:shadow-lg transition-all duration-300 cursor-pointer hover:scale-105"
+                onClick={() => setShowDemo('Science')}
+              >
                 <CardContent className="p-6 text-center">
                   <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                     <MessageSquare className="h-8 w-8 text-primary" />
                   </div>
                   <h3 className="text-2xl font-bold text-foreground mb-2">SCIENCE</h3>
                   <p className="text-muted-foreground">Hands-on Experiments</p>
+                  <div className="mt-4">
+                    <Badge variant="outline" className="text-xs">
+                      Start Assessment
+                    </Badge>
+                  </div>
                 </CardContent>
               </Card>
             </motion.div>
           </div>
+          
+          {/* Additional Subject Options */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="text-center mt-8"
+          >
+            <Link to="/subjects">
+              <Button variant="outline" size="lg">
+                <BookOpen className="mr-2 h-4 w-4" />
+                View All Subjects
+              </Button>
+            </Link>
+            <p className="text-sm text-muted-foreground mt-2">
+              Explore Mathematics, Science, English, Social Studies, Computer Science, and more
+            </p>
+          </motion.div>
           
           {/* Carousel Indicators */}
           <div className="flex justify-center mt-8 space-x-2">
@@ -511,6 +563,18 @@ const LandingPage = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Subject Demo Modal */}
+      {showDemo && (
+        <SubjectDemo
+          subject={showDemo}
+          onStartAssessment={() => {
+            setShowDemo(null);
+            window.location.href = `/enhanced-assessment?subject=${showDemo}&studentId=demo_student`;
+          }}
+          onClose={() => setShowDemo(null)}
+        />
+      )}
 
     </div>
   );

@@ -14,6 +14,10 @@ import KnowledgeGraph from "./pages/KnowledgeGraph";
 import QuizTest from "./pages/QuizTest";
 import SimpleTest from "./pages/SimpleTest";
 import AITutorPage from "./pages/AITutorPage";
+import BookRecommendationsPage from "./pages/BookRecommendationsPage";
+import EnhancedAssessmentPage from "./pages/EnhancedAssessmentPage";
+import SubjectSelectionPage from "./pages/SubjectSelectionPage";
+import ARGamingPage from "./pages/ARGamingPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -37,6 +41,10 @@ const App = () => (
               <Route path="/quiz-test" element={<QuizTest />} />
               <Route path="/simple-test" element={<SimpleTest />} />
               <Route path="/ai-tutor" element={<AITutorPage />} />
+              <Route path="/book-recommendations" element={<BookRecommendationsPage />} />
+              <Route path="/enhanced-assessment" element={<EnhancedAssessmentPage />} />
+              <Route path="/subjects" element={<SubjectSelectionPage />} />
+              <Route path="/ar-gaming" element={<ARGamingPage />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>

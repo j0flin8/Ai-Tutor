@@ -23,6 +23,7 @@ import {
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from "recharts";
 import { classroomStats } from "@/data/mockData";
 import ClassQuizManager from "@/components/ClassQuizManager";
+import QuickActions from "@/components/QuickActions";
 
 const TeacherDashboard = () => {
   const [activeTab, setActiveTab] = useState<'overview' | 'quiz-manager'>('overview');
@@ -328,29 +329,9 @@ const TeacherDashboard = () => {
           {/* Right Column - Insights */}
           <div className="space-y-8">
             {/* Quick Actions */}
-            <Card className="card-elevated">
-              <CardHeader>
-                <CardTitle>Quick Actions</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-3">
-                <Button variant="outline" className="w-full justify-start">
-                  <BookOpen className="mr-2 h-4 w-4" />
-                  Assign New Quiz
-                </Button>
-                <Button variant="outline" className="w-full justify-start">
-                  <Users className="mr-2 h-4 w-4" />
-                  Send Parent Report
-                </Button>
-                <Button variant="outline" className="w-full justify-start">
-                  <TrendingUp className="mr-2 h-4 w-4" />
-                  Schedule Review Session
-                </Button>
-                <Button variant="outline" className="w-full justify-start">
-                  <AlertTriangle className="mr-2 h-4 w-4" />
-                  Identify At-Risk Students
-                </Button>
-              </CardContent>
-            </Card>
+            <QuickActions onActionComplete={(action, data) => {
+              console.log('Quick action completed:', action, data);
+            }} />
 
             {/* Top Performers */}
             <Card className="card-elevated">
